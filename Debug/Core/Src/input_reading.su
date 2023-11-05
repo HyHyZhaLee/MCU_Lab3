@@ -1,0 +1,4 @@
+../Core/Src/input_reading.c:27:6:initButton	16	static
+../Core/Src/input_reading.c:40:6:button_reading	16	static
+../Core/Src/input_reading.c:74:15:is_button_pressed	16	static
+../Core/Src/input_reading.c:83:15:is_button_long_pressed	16	static
