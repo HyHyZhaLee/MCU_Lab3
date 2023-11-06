@@ -84,7 +84,7 @@ void update7SEG(int index){
 	}
 }
 
-void resetALL(){
+void display_resetALL(){
 	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, OFF);
 	HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, OFF);
 	HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, OFF);
@@ -141,7 +141,7 @@ void display_traffic2(int input){
 	}
 }
 
-void toggleLed(int input, int duration){
+void display_toggleLed(int input, int duration){
 	if(timer_flag[1]){
 		setTimer(duration, 1);
 		switch(input){

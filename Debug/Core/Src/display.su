@@ -1,7 +1,7 @@
 ../Core/Src/display.c:38:6:display7SEG	16	static
 ../Core/Src/display.c:49:6:update7SEG	16	static
-../Core/Src/display.c:87:6:resetALL	16	static
+../Core/Src/display.c:87:6:display_resetALL	16	static
 ../Core/Src/display.c:101:6:display_traffic1	16	static
 ../Core/Src/display.c:122:6:display_traffic2	16	static
-../Core/Src/display.c:144:6:toggleLed	16	static
+../Core/Src/display.c:144:6:display_toggleLed	16	static
 ../Core/Src/display.c:164:6:led7Run	8	static

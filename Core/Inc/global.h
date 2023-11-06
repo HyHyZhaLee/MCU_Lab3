@@ -15,14 +15,14 @@
 #include "fsm_automatic.h"
 
 #define INIT	0
-#define RED_GREEN 1
-#define RED_YELLOW 2
-#define GREEN_RED 3
-#define YELLOW_RED 4
+#define RED 1
+#define YELLOW 2
+#define GREEN 3
 
-#define MOD_RED 10
-#define MOD_YELLOW 11
-#define MOD_GREEN 12
+#define MODE_AUTO 10
+#define MODE_RED 11
+#define MODE_YELLOW 12
+#define MODE_GREEN 13
 
 #define DURATION_RED  7
 #define DURATION_YELLOW  2
