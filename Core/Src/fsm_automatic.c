@@ -15,7 +15,7 @@ int duration_RED = DURATION_RED;
 int duration_YELLOW = DURATION_YELLOW;
 int duration_GREEN = DURATION_GREEN;
 
-int LED_RED_temp = DURATION_RED;
+int duration_RED_temp = DURATION_RED;
 int duration_YELLOW_temp = DURATION_YELLOW;
 int duration_GREEN_temp = DURATION_GREEN;
 
@@ -27,7 +27,7 @@ void fsm_reset(){
 	STATUS1 = INIT;
 	STATUS2 = INIT;
 	display_resetALL();
-	LED_RED_temp = duration_RED;
+	duration_RED_temp = duration_RED;
 	duration_YELLOW_temp = duration_YELLOW;
 	duration_GREEN_temp = duration_GREEN;
 }
@@ -102,20 +102,20 @@ void fsm_run(){
 			display_toggleLed(RED, TIMER_LED_BLINKY);
 			led_buffer[0] = 0;
 			led_buffer[1] = 1;
-			led_buffer[3] = LED_RED_temp%10;
-			led_buffer[2] = (LED_RED_temp - led_buffer[3])/10;
+			led_buffer[3] = duration_RED_temp%10;
+			led_buffer[2] = (duration_RED_temp - led_buffer[3])/10;
 			break;
 		case MODE_YELLOW:
 			display_toggleLed(YELLOW, TIMER_LED_BLINKY);
 			led_buffer[0] = 0;
-			led_buffer[1] = 1;
+			led_buffer[1] = 2;
 			led_buffer[3] = duration_YELLOW_temp%10;
 			led_buffer[2] = (duration_YELLOW_temp - led_buffer[3])/10;
 			break;
 		case MODE_GREEN:
 			display_toggleLed(GREEN, TIMER_LED_BLINKY);
 			led_buffer[0] = 0;
-			led_buffer[1] = 1;
+			led_buffer[1] = 3;
 			led_buffer[3] = duration_GREEN_temp%10;
 			led_buffer[2] = (duration_GREEN_temp - led_buffer[3])/10;
 			break;
@@ -145,7 +145,7 @@ void fsm_for_input_processing(void){
 			case MODE_AUTO:
 				break;
 			case MODE_RED:
-				LED_RED_temp++;
+				duration_RED_temp++;
 				break;
 			case MODE_YELLOW:
 				duration_YELLOW_temp++;
@@ -158,7 +158,7 @@ void fsm_for_input_processing(void){
 		}
 	}
 	if(is_button_pressed(2)){
-		duration_RED = LED_RED_temp;
+		duration_RED = duration_RED_temp;
 		duration_YELLOW = duration_YELLOW_temp;
 		duration_GREEN = duration_GREEN_temp;
 		TRAFFIC_MODE++;
