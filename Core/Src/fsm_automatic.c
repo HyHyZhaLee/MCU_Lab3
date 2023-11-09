@@ -135,11 +135,13 @@ void fsm_run(){
 
 }
 void fsm_for_input_processing(void){
+	//Button 0 for change traffic mode
 	if(is_button_pressed(0)){
 		TRAFFIC_MODE++;
 		if(TRAFFIC_MODE>MODE_GREEN) TRAFFIC_MODE = MODE_AUTO;
 		fsm_reset();
 	}
+	//Button 1 for increasing temp value
 	if(is_button_pressed(1)){
 		switch (TRAFFIC_MODE) {
 			case MODE_AUTO:
@@ -157,6 +159,7 @@ void fsm_for_input_processing(void){
 				break;
 		}
 	}
+	//Button 2 for save the temp value
 	if(is_button_pressed(2)){
 		duration_RED = duration_RED_temp;
 		duration_YELLOW = duration_YELLOW_temp;
@@ -165,6 +168,7 @@ void fsm_for_input_processing(void){
 		if(TRAFFIC_MODE>MODE_GREEN) TRAFFIC_MODE = MODE_AUTO;
 		fsm_reset();
 	}
+	//Run fsm for checking 4 state: AUTO, Modify Red
 	fsm_run();
 }
 

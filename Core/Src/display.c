@@ -5,22 +5,7 @@
  *      Author: Admin
  */
 #include "display.h"
-#ifdef CATHODE
-uint8_t segmentNumber[10]={
-	0x3f,
-	0x06,
-	0x5b,
-	0x4f,
-	0x66,
-	0x6d,
-	0x7d,
-	0x07,
-	0x7f,
-	0x4f
-};
-#endif
 
-#ifdef	ANODE
 uint8_t segmentNumber[10]={
 	0xc0,
 	0xf9,
@@ -33,7 +18,6 @@ uint8_t segmentNumber[10]={
 	0x80,
 	0x90
 };
-#endif
 
 void display7SEG(int number){
 	HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, (segmentNumber[number]>>0)&0x01);
@@ -162,6 +146,7 @@ void display_toggleLed(int input, int duration){
 }
 
 void led7Run(){
-	update7SEG(index_led++);
+	update7SEG(index_led);
+	index_led++;
 	if(index_led >= MAX_LED) index_led = 0;
 }

@@ -7,7 +7,6 @@
 
 #ifndef INC_DISPLAY_H_
 #define INC_DISPLAY_H_
-#define ANODE
 
 #include "global.h"
 #define ON	0
